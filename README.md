@@ -25,8 +25,8 @@ Ideal para quem está começando no mundo da computação física ou quer aprend
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/raspberry-pi-builder.git
-   cd raspberry-pi-builder
+   git clone https://github.com/lavicardosoo/raspberry-pi_trans.git
+   cd raspberry-pi_trans
    ```
 
 2. Instale o Pygame:
