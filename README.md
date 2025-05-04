@@ -18,7 +18,7 @@ Ideal para quem está começando no mundo da computação física ou quer aprend
 
 - [Python 3](https://www.python.org/)
 - [Pygame](https://www.pygame.org/)
-<img src="readme-media/pygame-icon.png">
+<img src="readme-media/pygame-icon.png" style="width:200;height:200">
 ---
 
 ## 📦 Instalação e execução
