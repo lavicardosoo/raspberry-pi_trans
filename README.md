@@ -50,8 +50,8 @@ Este jogo foi feito com o propósito de **ensinar de forma lúdica** os componen
 
 ## 📸 Screenshot
 
-<img src="readme-media/captura1.png" style="width:700px">
 <img src="readme-media/captura2.png" style="width:700px">
+<img src="readme-media/captura1.png" style="width:700px">
 
 ---
 
