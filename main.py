@@ -49,7 +49,7 @@ arrasou = load("img", False, "media/arrasou.png", 300,100)
 burra = load("img", False, "media/burra.png", 300,100)
 good_lucky = load("img", False, "media/img.png", 300,120)
 board_img = load("img",False, "media/board.png", 800,600)
-
+sair = load('img',False,'media/get_out.png',150,70)
 join_audio = pg.mixer.Sound("media/put.mp3")
 aiqdlc = pg.mixer.Sound("media/aiqdlc.mp3")
 inutil = pg.mixer.Sound("media/inutil.mp3")
@@ -71,8 +71,7 @@ components_img = {"cpu" : load("img", False, "media/cpu.png", 130, 100),
 "ethernet" : load("img", False, "media/ethernet.png", 170,100)
 }
 
-
-
+sairrect = sair.get_rect()
 #função para carregar imagens e áudios.
 
 def load(type,sound,img,width, height):
@@ -196,6 +195,9 @@ while True:
 			audio.touch(ev)
 			ethernet.touch(ev)
 
+			if sairrect.colliderect(pg.mouse.get_pos()):
+				pg.quit()
+				
 		elif ev.type == pg.KEYDOWN:
 			#se clicar na tecla 6 o jogo fecha
 			if ev.key == 1073741918:
@@ -236,6 +238,7 @@ while True:
 	screen.blit(bg, (0,0))
 	screen.blit(tittle,(350,20))
 	screen.blit(good_lucky,(350,90))
+	screen.blit(sair,(800,20))
 	group.draw(screen)
 	
 	cpu.update()
