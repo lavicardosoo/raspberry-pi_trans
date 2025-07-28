@@ -1,6 +1,6 @@
 import pygame as pg
-from emoji import emojize
 from random import choice
+from sys import exit
 #build a raspberry pi!🍓
 
 def load(type,sound,img,width, height):
@@ -72,6 +72,7 @@ components_img = {"cpu" : load("img", False, "media/cpu.png", 130, 100),
 }
 
 sairrect = sair.get_rect()
+sairrect.left,sairrect.top = (800,20)
 #função para carregar imagens e áudios.
 
 def load(type,sound,img,width, height):
@@ -181,8 +182,9 @@ ok = 0
 while True:
 	
 	for ev in pg.event.get():
-		if ev.type == quit:
+		if ev.type == pg.QUIT:
 			pg.quit()
+			exit()
 			
 		elif ev.type == pg.MOUSEBUTTONDOWN:
 			joinedlen = len(joined)
@@ -195,8 +197,9 @@ while True:
 			audio.touch(ev)
 			ethernet.touch(ev)
 
-			if sairrect.colliderect(pg.mouse.get_pos()):
+			if sairrect.collidepoint(ev.pos):
 				pg.quit()
+				exit()
 				
 		elif ev.type == pg.KEYDOWN:
 			#se clicar na tecla 6 o jogo fecha
@@ -223,9 +226,6 @@ while True:
 			audio.join(joined)
 			ethernet.join(joined)
 
-			print(joinedlen)
-			print(len(joined))
-
 			good_lucky = burra
 
 			if joinedlen != len(joined):
@@ -238,7 +238,7 @@ while True:
 	screen.blit(bg, (0,0))
 	screen.blit(tittle,(350,20))
 	screen.blit(good_lucky,(350,90))
-	screen.blit(sair,(800,20))
+	screen.blit(sair,(sairrect.left,sairrect.top))
 	group.draw(screen)
 	
 	cpu.update()
